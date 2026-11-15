@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="twilightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141E30"/>
+      <stop offset="50%" stop-color="#243B55"/>
+      <stop offset="100%" stop-color="#4B6584"/>
+    </linearGradient>
+    <linearGradient id="lanternGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFF9C4" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#FFD54F" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFB300" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Night Sky -->
+  <rect width="800" height="500" fill="url(#twilightSky)"/>
+
+  <!-- Sparkling Golden Stars -->
+  <g fill="#FFF59D">
+    <circle cx="80" cy="80" r="3"/>
+    <circle cx="160" cy="50" r="2"/>
+    <circle cx="280" cy="90" r="3.5"/>
+    <circle cx="390" cy="45" r="2"/>
+    <circle cx="510" cy="85" r="3"/>
+    <circle cx="670" cy="60" r="4"/>
+    <circle cx="730" cy="110" r="2.5"/>
+    <circle cx="220" cy="130" r="2"/>
+    <circle cx="610" cy="140" r="3"/>
+  </g>
+
+  <!-- Crescent Moon -->
+  <g transform="translate(680, 80)">
+    <path d="M 0 -45 A 45 45 0 1 0 40 40 A 38 38 0 1 1 0 -45 Z" fill="#FFE082"/>
+  </g>
+
+  <!-- Distant Fairy-tale Mountains and Cozy Forest -->
+  <path d="M -50 350 L 120 250 L 300 360 L 500 230 L 720 370 L 850 310 L 850 500 L -50 500 Z" fill="#1C2E4A" opacity="0.7"/>
+  <path d="M -50 390 L 850 390 L 850 500 L -50 500 Z" fill="#223B30"/>
+
+  <!-- Distant Village with Warm Windows -->
+  <g transform="translate(100, 320)" fill="#37474F">
+    <polygon points="20,20 40,0 60,20 60,50 20,50"/>
+    <polygon points="80,15 105,-5 130,15 130,50 80,50"/>
+    <polygon points="150,25 170,5 190,25 190,50 150,50"/>
+    <!-- Glowing Windows -->
+    <rect x="35" y="28" width="12" height="12" fill="#FFD54F"/>
+    <rect x="98" y="20" width="14" height="14" fill="#FFD54F"/>
+    <rect x="165" y="30" width="10" height="10" fill="#FFD54F"/>
+  </g>
+
+  <!-- Friendly Jirtdan Character -->
+  <g transform="translate(420, 270)">
+    <!-- Lantern Light Aura -->
+    <circle cx="105" cy="50" r="90" fill="url(#lanternGlow)"/>
+
+    <!-- Jirtdan Body -->
+    <!-- Soft Red Tunic with Golden Embroidery -->
+    <path d="M -30 80 L -40 160 L 40 160 L 30 80 Z" fill="#D32F2F" stroke="#B71C1C" stroke-width="3"/>
+    <!-- Belt with Buckle -->
+    <rect x="-35" y="115" width="70" height="14" fill="#5D4037"/>
+    <rect x="-10" y="112" width="20" height="20" fill="#FFD700" rx="3"/>
+
+    <!-- Trousers & Traditional Soft Boots (Çarıq) -->
+    <rect x="-28" y="160" width="22" height="40" fill="#1565C0"/>
+    <rect x="6" y="160" width="22" height="40" fill="#1565C0"/>
+    <!-- Boots -->
+    <path d="M -32 195 L -10 195 Q -5 208 -10 215 Q -28 215 -35 205 Z" fill="#795548"/>
+    <path d="M 6 195 L 28 195 Q 33 208 28 215 Q 10 215 3 205 Z" fill="#795548"/>
+
+    <!-- Jirtdan Cute Head -->
+    <circle cx="0" cy="40" r="38" fill="#FFD1A4"/>
+
+    <!-- Happy Eyes with Brave Sparkle -->
+    <ellipse cx="-13" cy="36" rx="6" ry="8" fill="#2E1C0C"/>
+    <circle cx="-11" cy="33" r="2.5" fill="#FFFFFF"/>
+    <ellipse cx="13" cy="36" rx="6" ry="8" fill="#2E1C0C"/>
+    <circle cx="15" cy="33" r="2.5" fill="#FFFFFF"/>
+
+    <!-- Confident Warm Smile & Rosy Cheeks -->
+    <path d="M -14 54 Q 0 68 14 54" stroke="#D32F2F" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="-22" cy="48" r="6" fill="#FF8A80" opacity="0.6"/>
+    <circle cx="22" cy="48" r="6" fill="#FF8A80" opacity="0.6"/>
+
+    <!-- Traditional Woolen Papakh Hat (Qoyun dərisi papaq) -->
+    <path d="M -42 22 Q 0 -25 42 22 Q 35 32 -42 22 Z" fill="#4E342E" stroke="#3E2723" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="42" ry="24" fill="#5D4037"/>
+    <circle cx="-25" cy="-2" r="12" fill="#4E342E"/>
+    <circle cx="0" cy="-8" r="14" fill="#4E342E"/>
+    <circle cx="25" cy="-2" r="12" fill="#4E342E"/>
+
+    <!-- Little Staff & Glowing Brass Lantern -->
+    <!-- Arm holding staff -->
+    <path d="M 28 85 L 90 60" stroke="#FFD1A4" stroke-width="12" stroke-linecap="round"/>
+    <line x1="88" y1="20" x2="88" y2="215" stroke="#8D6E63" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Antique Lantern Hanging on Staff -->
+    <g transform="translate(105, 50)">
+      <polygon points="0,-18 14,-6 10,18 -10,18 -14,-6" fill="#FFB300" stroke="#795548" stroke-width="3"/>
+      <!-- Candle Flame -->
+      <path d="M 0 10 Q -4 0 0 -8 Q 4 0 0 10" fill="#FF3D00"/>
+      <circle cx="0" cy="-2" r="3" fill="#FFF59D"/>
+      <!-- Lantern Cap -->
+      <polygon points="-16,-6 16,-6 0,-22" fill="#5D4037"/>
+    </g>
+  </g>
+</svg>

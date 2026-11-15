@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A1E5FF"/>
+      <stop offset="60%" stop-color="#E2F6FF"/>
+      <stop offset="100%" stop-color="#FFF4D4"/>
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#72D656"/>
+      <stop offset="100%" stop-color="#469C2D"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFF275"/>
+      <stop offset="70%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </radialGradient>
+    <linearGradient id="shellGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#D50000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="800" height="500" fill="url(#skyGrad)"/>
+
+  <!-- Smiling Sun -->
+  <g transform="translate(680, 90)">
+    <circle r="55" fill="url(#sunGrad)"/>
+    <!-- Sun Rays -->
+    <path d="M0 -75 L0 -60 M0 60 L0 75 M-75 0 L-60 0 M60 0 L75 0 M-50 -50 L-40 -40 M40 40 L50 50 M-50 50 L-40 40 M40 -40 L50 -50" stroke="#FFB300" stroke-width="6" stroke-linecap="round"/>
+    <!-- Sun Face -->
+    <circle cx="-16" cy="-10" r="6" fill="#4E342E"/>
+    <circle cx="16" cy="-10" r="6" fill="#4E342E"/>
+    <path d="M -20 12 Q 0 30 20 12" stroke="#4E342E" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="-25" cy="6" r="6" fill="#FF8A80" opacity="0.6"/>
+    <circle cx="25" cy="6" r="6" fill="#FF8A80" opacity="0.6"/>
+  </g>
+
+  <!-- Fluffy Cartoon Clouds -->
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="160" cy="110" rx="60" ry="32"/>
+    <ellipse cx="205" cy="95" rx="45" ry="38"/>
+    <ellipse cx="120" cy="105" rx="40" ry="28"/>
+    
+    <ellipse cx="440" cy="140" rx="55" ry="26"/>
+    <ellipse cx="480" cy="125" rx="40" ry="30"/>
+  </g>
+
+  <!-- Rainbow Arc -->
+  <path d="M 50 360 A 280 280 0 0 1 550 360" fill="none" stroke="#FF5252" stroke-width="8" opacity="0.35"/>
+  <path d="M 60 360 A 270 270 0 0 1 540 360" fill="none" stroke="#FFD740" stroke-width="8" opacity="0.35"/>
+  <path d="M 70 360 A 260 260 0 0 1 530 360" fill="none" stroke="#69F0AE" stroke-width="8" opacity="0.35"/>
+  <path d="M 80 360 A 250 250 0 0 1 520 360" fill="none" stroke="#40C4FF" stroke-width="8" opacity="0.35"/>
+
+  <!-- Rolling Green Hills -->
+  <path d="M -50 360 Q 200 280 450 360 T 850 340 L 850 500 L -50 500 Z" fill="url(#grassGrad)"/>
+  <path d="M -50 390 Q 250 320 550 400 T 850 370 L 850 500 L -50 500 Z" fill="#5BB840" opacity="0.8"/>
+
+  <!-- Giant Daisy Flower -->
+  <g transform="translate(230, 310)">
+    <!-- Stem -->
+    <path d="M 0 50 Q 15 110 20 180" stroke="#388E3C" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M 12 110 Q 50 90 70 110 Q 40 130 14 120" fill="#4CAF50"/>
+    <!-- Petals -->
+    <g fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2">
+      <ellipse cx="0" cy="-60" rx="22" ry="45"/>
+      <ellipse cx="45" cy="-40" rx="22" ry="45" transform="rotate(45 45 -40)"/>
+      <ellipse cx="60" cy="0" rx="45" ry="22"/>
+      <ellipse cx="45" cy="40" rx="22" ry="45" transform="rotate(-45 45 40)"/>
+      <ellipse cx="0" cy="60" rx="22" ry="45"/>
+      <ellipse cx="-45" cy="40" rx="22" ry="45" transform="rotate(45 -45 40)"/>
+      <ellipse cx="-60" cy="0" rx="45" ry="22"/>
+      <ellipse cx="-45" cy="-40" rx="22" ry="45" transform="rotate(-45 -45 -40)"/>
+    </g>
+    <!-- Center -->
+    <circle r="34" fill="#FFC107"/>
+    <circle cx="-10" cy="-6" r="4" fill="#6D4C41"/>
+    <circle cx="10" cy="-6" r="4" fill="#6D4C41"/>
+    <path d="M -12 8 Q 0 18 12 8" stroke="#6D4C41" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Cute Ladybug "Tıq-tıq Xanım" Character -->
+  <g transform="translate(480, 330)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="75" rx="70" ry="18" fill="#1B5E20" opacity="0.3"/>
+    
+    <!-- Shiny Red Boots -->
+    <g fill="#D50000" stroke="#880E4F" stroke-width="2">
+      <!-- Left boots -->
+      <path d="M -45 55 L -45 75 Q -55 75 -65 78 Q -60 68 -45 55 Z"/>
+      <path d="M -20 58 L -20 76 Q -30 76 -40 80 Q -35 70 -20 58 Z"/>
+      <!-- Right boots -->
+      <path d="M 25 58 L 25 76 Q 35 76 45 80 Q 40 70 25 58 Z"/>
+      <path d="M 50 55 L 50 75 Q 60 75 70 78 Q 65 68 50 55 Z"/>
+    </g>
+
+    <!-- Ladybug Round Body & Shell -->
+    <circle cx="0" cy="10" r="65" fill="url(#shellGrad)"/>
+    <!-- Shell Center Line -->
+    <line x1="0" y1="-50" x2="0" y2="70" stroke="#212121" stroke-width="4"/>
+    
+    <!-- Polka Dots -->
+    <circle cx="-32" cy="-10" r="12" fill="#212121"/>
+    <circle cx="32" cy="-10" r="12" fill="#212121"/>
+    <circle cx="-25" cy="35" r="10" fill="#212121"/>
+    <circle cx="25" cy="35" r="10" fill="#212121"/>
+    <circle cx="-42" cy="18" r="8" fill="#212121"/>
+    <circle cx="42" cy="18" r="8" fill="#212121"/>
+
+    <!-- Shiny Highlight -->
+    <ellipse cx="-20" cy="-25" rx="16" ry="8" fill="#FFFFFF" opacity="0.5" transform="rotate(-30 -20 -25)"/>
+
+    <!-- Cute Smiling Head -->
+    <circle cx="0" cy="-55" r="32" fill="#263238"/>
+    <!-- Cheerful Big Eyes -->
+    <circle cx="-12" cy="-58" r="10" fill="#FFFFFF"/>
+    <circle cx="-10" cy="-58" r="5" fill="#212121"/>
+    <circle cx="-8" cy="-61" r="2.5" fill="#FFFFFF"/>
+
+    <circle cx="12" cy="-58" r="10" fill="#FFFFFF"/>
+    <circle cx="10" cy="-58" r="5" fill="#212121"/>
+    <circle cx="12" cy="-61" r="2.5" fill="#FFFFFF"/>
+
+    <!-- Sweet Smile & Rosy Cheeks -->
+    <path d="M -10 -45 Q 0 -36 10 -45" stroke="#FF5252" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="-20" cy="-48" r="5" fill="#FF8A80" opacity="0.7"/>
+    <circle cx="20" cy="-48" r="5" fill="#FF8A80" opacity="0.7"/>
+
+    <!-- Cute Curly Antennae with Little Bells -->
+    <path d="M -10 -84 Q -25 -105 -35 -95" stroke="#263238" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="-35" cy="-95" r="6" fill="#FFD700"/>
+    <path d="M 10 -84 Q 25 -105 35 -95" stroke="#263238" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="35" cy="-95" r="6" fill="#FFD700"/>
+  </g>
+
+  <!-- Little Butterflies Floating -->
+  <g transform="translate(620, 240) rotate(15)">
+    <ellipse cx="-10" cy="-8" rx="12" ry="8" fill="#FF4081" opacity="0.8"/>
+    <ellipse cx="10" cy="-8" rx="12" ry="8" fill="#FF4081" opacity="0.8"/>
+    <ellipse cx="-6" cy="6" rx="8" ry="6" fill="#FF80AB" opacity="0.8"/>
+    <ellipse cx="6" cy="6" rx="8" ry="6" fill="#FF80AB" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="3" ry="10" fill="#4A148C"/>
+  </g>
+</svg>
