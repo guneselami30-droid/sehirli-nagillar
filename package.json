@@ -1,0 +1,20 @@
+{
+  "name": "sehrli-nagillar",
+  "version": "1.0.0",
+  "description": "Sehrli Nağıllar — Uşaq Hekayə və Nağıl Portalı",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nagillar",
+    "hekayeler",
+    "fairytales",
+    "children",
+    "audio",
+    "azerbaijan",
+    "kids-stories"
+  ],
+  "author": "Sehrli Nağıllar Portalı",
+  "license": "MIT"
+}

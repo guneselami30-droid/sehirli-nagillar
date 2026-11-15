@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="az">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sehrli Nağıllar — Uşaq Hekayə və Nağıl Portalı</title>
+  <meta name="description"
+    content="Uşaqlar üçün sehrli Azərbaycan və dünya nağılları, səsli hekayələr, laylalar və tərbiyəvi dastanlar." />
+
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=Work+Sans:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFFDF9",
+            "surface-cream": "#FBF3E8",
+            "surface-ivory": "#FFF9EE",
+            "surface-dark": "#161324",
+            "surface-dark-secondary": "#211B38",
+            "surface-container": "#F5E9D8",
+            "surface-container-high": "#EEDDCA",
+            "surface-container-lowest": "#FFFFFF",
+            // Narıncı (Fairytale Sunrise & Warm Amber)
+            "primary": "#E65100",
+            "primary-dark": "#BF360C",
+            "primary-light": "#FF8A50",
+            "primary-container": "#F97316",
+            "fairy-orange": "#F97316",
+            "fairy-orange-deep": "#EA580C",
+            "fairy-orange-light": "#FFEDD5",
+            // Yaşıl (Emerald Forest & Life / Zümrüd)
+            "fairy-green": "#16A34A",
+            "fairy-green-dark": "#15803D",
+            "fairy-green-light": "#DCFCE7",
+            // Sarı (Golden Stars, Sunbeams & Coins)
+            "fairy-yellow": "#F59E0B",
+            "fairy-yellow-gold": "#EAB308",
+            "fairy-yellow-light": "#FEF3C7",
+            "interactive-amber": "#F59E0B",
+            // Qırmızı (Ruby Red, Pomegranate & Courage)
+            "fairy-red": "#E11D48",
+            "fairy-red-dark": "#BE123C",
+            "fairy-red-light": "#FFE4E6",
+            "fairy-ruby": "#DC2626",
+            // Typography & Borders
+            "text-ink": "#271E18",
+            "text-ink-inverted": "#F9F3EA",
+            "on-surface": "#271E18",
+            "on-surface-variant": "#5F4D3F",
+            "border-parchment": "#E5D7C2",
+            "border-dark": "#3D3558"
+          },
+          fontFamily: {
+            headline: ["\"Source Serif 4\"", "Georgia", "serif"],
+            body: ["\"Work Sans\"", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom Fairytale Gradients and Animations */
+    .bg-fairy-sunset {
+      background: linear-gradient(135deg, #EA580C 0%, #E11D48 100%);
+    }
+
+    .bg-fairy-forest {
+      background: linear-gradient(135deg, #16A34A 0%, #0D9488 100%);
+    }
+
+    .bg-fairy-gold {
+      background: linear-gradient(135deg, #F59E0B 0%, #EAB308 100%);
+    }
+
+    .bg-fairy-ruby {
+      background: linear-gradient(135deg, #E11D48 0%, #DC2626 100%);
+    }
+
+    .bg-fairy-aurora {
+      background: linear-gradient(135deg, #EA580C 0%, #F59E0B 50%, #16A34A 100%);
+    }
+
+    .story-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .story-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(234, 88, 12, 0.15);
+    }
+
+    @keyframes snShake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-6px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(6px);
+      }
+    }
+
+    .animate-shake {
+      animation: snShake 0.4s ease-in-out;
+    }
+
+    @keyframes snPop {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-pop {
+      animation: snPop 0.4s ease-out;
+    }
+
+    @keyframes snFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: snFadeIn 0.35s ease-out forwards;
+    }
+  </style>
+
+  <script src="nagillar-core.js"></script>
+</head>
+
+<body
+  class="bg-surface font-body text-on-surface antialiased selection:bg-interactive-amber selection:text-white transition-colors duration-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="header-top"
+    class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-border-parchment/60 transition-colors duration-300">
+    <div
+      class="h-20 w-full max-w-[1560px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-3">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 via-rose-500 to-amber-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 group-hover:rotate-6 transition-all duration-300">
+          <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+        </div>
+        <div class="flex flex-col">
+          <span
+            class="font-headline text-base sm:text-lg font-bold tracking-tight text-on-surface leading-tight flex items-center gap-1">
+            <span data-i18n="brand_title">SEHRLİ NAĞILLAR</span>
+            <span class="text-amber-500 text-xs">✨</span>
+          </span>
+          <span
+            class="text-[9px] uppercase tracking-widest text-orange-700 dark:text-orange-400 font-semibold hidden sm:block"
+            data-i18n="brand_subtitle">
+            Uşaq Hekayə və Nağıl Portalı
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (White normal, rich orange-red-green-gold gradients on hover & active) -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-1.5 p-1.5 bg-surface-cream/80 dark:bg-surface-dark/90
+          rounded-2xl border border-border-parchment/70 dark:border-white/10 shadow-xs">
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-bold text-xs xl:text-[13px] bg-gradient-to-r from-orange-600 via-amber-600 to-rose-600 text-white border-transparent shadow-sm shadow-orange-500/30 transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="home" data-i18n="nav_home" href="index.html" onclick="window.snApp.goToHome(event)">Nağıllar
+          Dünyası</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="az" data-i18n="nav_azerbaijani" href="#kataloq"
+          onclick="window.snApp.goToSection('kataloq', 'az')">Azərbaycan</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="world" data-i18n="nav_world" href="#kataloq"
+          onclick="window.snApp.goToSection('kataloq', 'world')">Dünya</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="meals" data-i18n="nav_hero_meals" href="#qehreman-yemekleri"
+          onclick="window.snApp.goToSection('qehreman-yemekleri')">Yeməklər</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="nature" data-i18n="nav_nature" href="#kataloq"
+          onclick="window.snApp.goToSection('kataloq', 'nature')">Heyvan</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="lullabies" data-i18n="nav_lullabies" href="#laylalar"
+          onclick="window.snApp.goToSection('laylalar', 'bedtime')">Laylalar</a>
+        <a class="sn-nav-btn px-2.5 xl:px-3 py-1.5 rounded-xl font-medium text-xs xl:text-[13px] bg-white dark:bg-surface-dark-secondary text-text-ink dark:text-text-ink-inverted hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white hover:border-transparent border border-border-parchment/70 dark:border-white/10 shadow-xs transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+          data-nav="quiz" data-i18n="nav_quiz" href="#tapmaca"
+          onclick="window.snApp.goToSection('tapmaca')">Tapmacalar</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <!-- Search Trigger -->
+        <button aria-label="Axtarış"
+          class="sn-trigger-search w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-orange-600 hover:bg-orange-50 transition-colors cursor-pointer"
+          type="button" title="Nağıllarda axtarış (Ctrl+K)">
+          <span class="material-symbols-outlined text-[20px]">search</span>
+        </button>
+
+        <!-- Lullaby Music Trigger -->
+        <button aria-label="Sehrli Layla"
+          class="sn-trigger-lullaby w-9 h-9 rounded-xl flex items-center justify-center text-amber-600 hover:bg-amber-100/60 transition-colors bg-amber-500/10 border border-amber-500/30 cursor-pointer"
+          type="button" title="Sehrli layla musiqisini başlat/dayandır">
+          <span class="material-symbols-outlined text-[20px]">music_note</span>
+        </button>
+
+        <!-- Multi-language Switcher (AZ / EN / RU) -->
+        <div
+          class="flex items-center bg-surface-cream rounded-xl p-0.5 border border-border-parchment/70 text-[11px] font-bold shadow-xs">
+          <button type="button"
+            class="sn-lang-btn px-2.5 py-0.5 rounded-lg transition-all bg-gradient-to-r from-orange-500 to-rose-500 text-white font-bold shadow-xs"
+            data-lang="az">AZ</button>
+          <button type="button"
+            class="sn-lang-btn px-2.5 py-0.5 rounded-lg transition-all text-on-surface-variant hover:text-orange-600"
+            data-lang="en">EN</button>
+          <button type="button"
+            class="sn-lang-btn px-2.5 py-0.5 rounded-lg transition-all text-on-surface-variant hover:text-orange-600"
+            data-lang="ru">RU</button>
+        </div>
+
+        <!-- Theme Toggle (Gündüz / Gecə Yuxu Rejimi) -->
+        <button aria-label="Mövzu dəyişdirici"
+          class="sn-trigger-theme w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:text-amber-500 hover:bg-amber-50 transition-colors cursor-pointer"
+          type="button" title="Gecə Ulduzları / Gündüz Rejimi">
+          <span id="theme-icon" class="material-symbols-outlined text-[20px]">dark_mode</span>
+        </button>
+
+        <!-- Child Profile -->
+        <button
+          onclick="if(window.snApp) window.snApp.showToast('Balaca nağılpərəst profili: Qonaq uşaq rejimi aktivdir 🌟')"
+          class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 hover:scale-105 flex items-center justify-center text-white shadow transition-all ml-0.5 cursor-pointer"
+          type="button" title="Balaca Oxucu Profili">
+          <span class="material-symbols-outlined text-[18px]">child_care</span>
+        </button>
+
+        <!-- Mobile Menu Trigger Button -->
+        <button id="sn-mobile-menu-btn" onclick="document.getElementById('sn-mobile-menu')?.classList.toggle('hidden')"
+          aria-label="Menyu"
+          class="lg:hidden w-9 h-9 rounded-xl flex items-center justify-center text-on-surface hover:bg-orange-50 hover:text-orange-600 transition-colors border border-border-parchment ml-1 cursor-pointer"
+          type="button">
+          <span class="material-symbols-outlined text-[22px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="sn-mobile-menu"
+      class="hidden lg:hidden w-full border-t border-border-parchment/60 bg-surface/98 backdrop-blur-xl px-4 py-3 shadow-xl">
+      <div class="flex flex-col gap-1.5 text-xs sm:text-sm font-medium max-w-lg mx-auto">
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-gradient-to-r from-orange-600 via-amber-600 to-rose-600 text-white font-bold cursor-pointer transition-all shadow-sm"
+          data-nav="home" data-i18n="nav_home" href="index.html"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToHome(event)">Nağıllar
+          Dünyası</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="az" data-i18n="nav_azerbaijani" href="#kataloq"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('kataloq', 'az')">Azərbaycan</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="world" data-i18n="nav_world" href="#kataloq"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('kataloq', 'world')">Dünya</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="meals" data-i18n="nav_hero_meals" href="#qehreman-yemekleri"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('qehreman-yemekleri')">Yeməklər</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="nature" data-i18n="nav_nature" href="#kataloq"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('kataloq', 'nature')">Heyvan</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="lullabies" data-i18n="nav_lullabies" href="#laylalar"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('laylalar', 'bedtime')">Laylalar</a>
+        <a class="sn-mobile-nav-btn px-3 py-2 rounded-xl bg-white text-text-ink hover:bg-gradient-to-r hover:from-orange-500 hover:to-rose-500 hover:text-white font-medium cursor-pointer border border-border-parchment/60 transition-all"
+          data-nav="quiz" data-i18n="nav_quiz" href="#tapmaca"
+          onclick="document.getElementById('sn-mobile-menu').classList.add('hidden'); window.snApp.goToSection('tapmaca')">Tapmacalar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="w-full pt-20">
+
+    <!-- ==================== SECTION 01: HERO & 3D POP-UP STORYBOOK ==================== -->
+    <section id="hero-section"
+      class="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-surface-cream to-surface-ivory dark:from-surface-dark dark:via-surface-dark-secondary dark:to-surface-dark border-b border-border-parchment/60 py-10 lg:py-16">
+
+      <!-- Live Magical Particle Canvas (Golden stars, fairytale dust) -->
+      <canvas id="hero-magic-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+      <!-- Ambient Sparkle Lights (Orange, Yellow, Green) -->
+      <div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-orange-500/15 blur-3xl pointer-events-none">
+      </div>
+      <div class="absolute top-10 left-10 w-80 h-80 rounded-full bg-amber-400/15 blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none">
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+
+        <!-- Left Column: Hero Narrative -->
+        <div id="hero-narrative-box"
+          class="lg:col-span-5 flex flex-col justify-center space-y-6 transition-all duration-300">
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span
+              class="inline-flex items-center gap-2 px-3.5 py-1 bg-gradient-to-r from-orange-50 to-amber-50 dark:bg-surface-dark-secondary text-orange-700 dark:text-orange-300 text-xs font-bold uppercase tracking-wider rounded-xl shadow-xs border border-orange-200/80 dark:border-white/10">
+              <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+              <span data-i18n="hero_badge_daily">Günün Sehrli Nağılı ✨</span>
+            </span>
+            <span id="hero-chest-badge"
+              class="text-xs text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase">
+              SEHRLİ SANDIQÇA № 01
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 id="hero-story-title"
+              class="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-text-ink leading-tight transition-all duration-300">
+              Məlikməmməd və Zümrüd Quşunun Sirri
+            </h1>
+            <p id="hero-story-desc"
+              class="text-base sm:text-lg text-on-surface-variant leading-relaxed transition-all duration-300">
+              Qaranlıq dünyaya enən cəsur Məlikməmmədin qızıl almaları qorumaq üçün göstərdiyi igidlik və Zümrüd quşunun
+              əfsanəvi qanadlarında işıqlı dünyaya qayıdışı.
+            </p>
+          </div>
+
+          <!-- Metadata Ribbon -->
+          <div
+            class="p-4 bg-surface-cream/80 dark:bg-surface-dark-secondary/80 rounded-2xl border border-border-parchment/60 dark:border-white/10 shadow-sm flex flex-wrap items-center gap-4 text-sm text-on-surface">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[19px] text-orange-600">schedule</span>
+              <span id="hero-story-time">Mütaliə: <strong>12 dəqiqə</strong></span>
+            </div>
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[19px] text-orange-600">family_restroom</span>
+              <span id="hero-story-age">Yaş: <strong>7–12 yaş</strong></span>
+            </div>
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[19px] text-orange-600">campaign</span>
+              <span id="hero-story-audio">Səsli Nağıl: <strong>Mövcuddur</strong></span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button id="hero-btn-read" onclick="window.snApp.openCurrentHeroStory(false)"
+              class="px-6 py-3.5 bg-gradient-to-r from-orange-600 via-amber-600 to-rose-600 hover:from-orange-500 hover:to-rose-500 text-white font-headline font-bold text-base rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all flex items-center gap-2 group cursor-pointer shadow-orange-600/20">
+              <span id="hero-read-btn-text">Sehrli Nağılı Oxu</span>
+              <span
+                class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">auto_stories</span>
+            </button>
+            <button id="hero-btn-listen" onclick="window.snApp.openCurrentHeroStory(true)"
+              class="px-5 py-3.5 bg-white dark:bg-surface-dark-secondary hover:bg-orange-50 dark:hover:bg-surface-dark text-text-ink dark:text-text-ink-inverted font-semibold text-sm rounded-2xl shadow-xs border border-border-parchment dark:border-white/10 flex items-center gap-2 transition-all cursor-pointer">
+              <span class="material-symbols-outlined text-[20px] text-amber-600">volume_up</span>
+              <span id="hero-listen-btn-text">Səsli Dinlə</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive 3D Pop-Up Fairytale Book Visual Stage (Interactive Magic Chest) -->
+        <div class="lg:col-span-7">
+          <div id="hero-chest-card" onclick="window.snApp.nextHeroStory(true)"
+            title="Sehrli sandığa toxunun və növbəti nağıla keçin ✨"
+            class="relative w-full rounded-3xl bg-surface-cream dark:bg-surface-dark-secondary p-4 sm:p-6 shadow-2xl border-2 border-orange-200/80 dark:border-white/10 overflow-hidden group cursor-pointer hover:border-orange-400 hover:shadow-orange-500/20 transition-all duration-300">
+
+            <!-- Book Header Strip -->
+            <div
+              class="flex items-center justify-between pb-3 mb-3 border-b border-border-parchment/70 dark:border-white/10 text-xs gap-2">
+              <div class="flex items-center gap-2 text-orange-700 dark:text-orange-400 font-bold truncate">
+                <span class="material-symbols-outlined text-[18px]">menu_book</span>
+                <span id="hero-stage-badge" class="truncate">FOLİANT CİLDİ: AZƏRBAYCAN SEHRLİ QƏHRƏMANLIQ DASTANI</span>
+              </div>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100/90 dark:bg-amber-900/40 text-amber-800 dark:text-amber-200 border border-amber-300/60 shadow-xs group-hover:scale-105 transition-transform shrink-0">
+                <span data-i18n="hero_chest_cycle_hint">✨ Sandığa toxun • Növbəti Nağıl 🎲</span>
+              </span>
+            </div>
+
+            <!-- Visual Pop-Up Canvas -->
+            <div id="fairy-stage"
+              class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-dark flex items-center justify-center transition-all duration-500">
+              <img id="fairy-stage-img"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="assets/melikmemmed.svg" alt="Günün Sehrli Nağılı" />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-surface-dark/85 via-surface-dark/20 to-transparent pointer-events-none">
+              </div>
+
+              <!-- Interactive Hotspot Pins on Pop-up Page (Green, Red, Gold) -->
+              <button onclick="event.stopPropagation(); window.snApp.openCurrentHeroStory(false)"
+                class="absolute top-1/4 left-1/3 w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform cursor-pointer magic-twinkle"
+                title="Günün Nağılı">
+                <span class="font-bold text-xs">1</span>
+              </button>
+              <button onclick="event.stopPropagation(); window.snApp.openCurrentHeroStory(false)"
+                class="absolute bottom-1/3 right-1/4 w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform cursor-pointer magic-twinkle"
+                title="Sehrli Səhnə">
+                <span class="font-bold text-xs">2</span>
+              </button>
+              <button onclick="event.stopPropagation(); window.snApp.openCurrentHeroStory(false)"
+                class="absolute top-1/2 right-1/3 w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-lg hover:scale-125 transition-transform cursor-pointer"
+                title="Sehrli Aləm">
+                <span class="font-bold text-xs">3</span>
+              </button>
+
+              <!-- Floating Fairytale Annotation -->
+              <div
+                class="absolute bottom-4 left-4 right-4 bg-surface-dark-secondary/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-text-ink-inverted flex items-center justify-between shadow-xl">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-interactive-amber/20 text-interactive-amber flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+                  </div>
+                  <div>
+                    <h4 data-i18n="hero_stage_note_title" class="font-headline font-bold text-sm text-white">İnteraktiv
+                      3D Pop-Up Kitab Səhnəsi</h4>
+                    <p data-i18n="hero_stage_note_desc" class="text-xs text-white/70">Qəhrəmanların sehrli dünyasını
+                      canlı kəşf et</p>
+                  </div>
+                </div>
+                <button id="hero-stage-open-btn"
+                  onclick="event.stopPropagation(); window.snApp.openCurrentHeroStory(false)"
+                  class="px-3.5 py-1.5 bg-interactive-amber hover:bg-white hover:text-surface-dark text-white rounded-xl text-xs font-bold transition-all shadow shrink-0">
+                  <span data-i18n="hero_stage_open_btn">Aç və Oxu</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Stage Control Bar -->
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-2 pt-2">
+              <div class="flex items-center gap-2">
+                <button
+                  onclick="event.stopPropagation(); document.getElementById('fairy-stage-img').classList.toggle('scale-125'); if(window.snApp) window.snApp.showToast('Yaxınlaşdırma rejimi dəyişdirildi')"
+                  class="px-3 py-1.5 rounded-xl bg-surface-ivory dark:bg-surface-dark hover:bg-surface-container text-xs font-semibold text-text-ink dark:text-text-ink-inverted border border-border-parchment/60 dark:border-white/10 flex items-center gap-1 transition-colors">
+                  <span class="material-symbols-outlined text-[16px] text-primary">zoom_in</span>
+                  <span data-i18n="hero_ctrl_zoom">Yaxınlaşdır</span>
+                </button>
+                <button
+                  onclick="event.stopPropagation(); document.getElementById('fairy-stage-img').classList.toggle('rotate-1'); if(window.snApp) window.snApp.showToast('Səhnə fırlandı')"
+                  class="px-3 py-1.5 rounded-xl bg-surface-ivory dark:bg-surface-dark hover:bg-surface-container text-xs font-semibold text-text-ink dark:text-text-ink-inverted border border-border-parchment/60 dark:border-white/10 flex items-center gap-1 transition-colors">
+                  <span class="material-symbols-outlined text-[16px] text-primary">360</span>
+                  <span data-i18n="hero_ctrl_rotate">360° Baxış</span>
+                </button>
+              </div>
+              <div class="text-xs text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[15px] text-interactive-amber">verified</span>
+                <span data-i18n="hero_ctrl_archive">Təsviri İncəsənət Arxivi</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 02: YAŞA UYĞUN HEKAYƏLƏR (Age Tiers) ==================== -->
+    <section id="pedaqoji" class="w-full px-4 sm:px-6 lg:px-12 py-12 lg:py-16 bg-surface">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="text-center max-w-3xl mx-auto space-y-2 mb-10">
+          <h2 data-i18n="age_tiers_title" class="font-headline text-3xl sm:text-4xl font-bold text-text-ink">
+            Yaşa Uyğun Hekayələr
+          </h2>
+          <p data-i18n="age_tiers_desc" class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+            Hər bir hekayə uşağın inkişaf mərhələsinə,<br>
+            söz ehtiyatına və xəyal gücünə uyğun təqdim olunur.
+          </p>
+        </div>
+
+        <!-- 3 Age Tier Cards (Green, Orange/Gold, Red) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+          <!-- Tier 1: Balacalar (3-6 yaş) - Emerald Green Theme -->
+          <div onclick="window.snApp.selectAgeMode('toddler')"
+            class="sn-age-btn p-6 rounded-3xl bg-surface-cream border border-emerald-500/30 hover:border-emerald-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center text-emerald-600 shadow-sm border border-emerald-200/60 group-hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-[28px]">child_care</span>
+                </span>
+                class="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider bg-emerald-50
+                dark:bg-emerald-950/50 px-3 py-1 rounded-full border border-emerald-200/60">
+                3 – 6 YAŞ
+                </span>
+              </div>
+              <div>
+                <h3
+                  class="font-headline text-2xl font-bold text-text-ink group-hover:text-emerald-700 transition-colors flex items-center gap-1.5">
+                  <span data-i18n="tier_toddler_name">Balacalar</span>
+                  <span class="text-sm">🐞</span>
+                </h3>
+                <div class="w-10 h-0.5 bg-emerald-500/50 my-2"></div>
+                <p data-i18n="tier_toddler_desc" class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Rəngarəng şəkillər, mehriban heyvan nağılları, təkrar olunan şən qafiyələr və sakitləşdirici yuxu
+                  laylaları.
+                </p>
+              </div>
+              <div class="p-3 bg-surface-ivory/80 rounded-xl space-y-1.5 text-xs text-on-surface-variant font-medium">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+                  <span data-i18n="tier_toddler_f1">Sadə dialoqlar və səsli nağıllar</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+                  <span data-i18n="tier_toddler_f2">Şirin yuxuya hazırlıq rejimi</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="event.stopPropagation(); window.snApp.selectAgeMode('toddler')"
+              class="mt-6 w-full py-3 bg-white dark:bg-surface-dark-secondary text-emerald-700 dark:text-emerald-400 font-bold rounded-xl text-xs sm:text-sm border border-emerald-200/70 shadow-xs group-hover:bg-emerald-600 group-hover:text-white transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer">
+              <span data-i18n="tier_toddler_btn">3–6 Yaş Nağılını Oxu</span>
+              <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+            </button>
+          </div>
+
+          <!-- Tier 2: Kəşfiyyatçılar (7-10 yaş) - Sunset Orange & Gold Theme -->
+          <div onclick="window.snApp.selectAgeMode('explorer')"
+            class="sn-age-btn p-6 rounded-3xl bg-surface-cream border-2 border-orange-500 shadow-xl shadow-orange-500/10 flex flex-col justify-between cursor-pointer group relative hover:-translate-y-1 transition-all duration-300">
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-0.5 bg-gradient-to-r from-orange-500
+            via-amber-500 to-yellow-500 text-white rounded-full text-xs font-bold uppercase tracking-wider shadow">
+            Ən Çox Sevilən ⭐
+          </div>
+          <div class="space-y-4 pt-1">
+            <div class="flex items-center justify-between">
+              <span
+                class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">explore</span>
+              </span>
+              class="text-xs font-bold text-orange-700 dark:text-orange-400 uppercase tracking-wider bg-orange-50
+              dark:bg-orange-950/50 px-3 py-1 rounded-full border border-orange-200/60">
+              7 – 10 YAŞ
+              </span>
+            </div>
+            <div>
+              <h3
+                class="font-headline text-2xl font-bold text-text-ink group-hover:text-orange-600 transition-colors flex items-center gap-1.5">
+                <span data-i18n="tier_explorer_name">Kəşfiyyatçılar</span>
+                <span class="text-sm">🧭</span>
+              </h3>
+              <div class="w-10 h-0.5 bg-orange-500 my-2"></div>
+              <p data-i18n="tier_explorer_desc" class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Klassik xalq nağılları, sirli meşə macəraları, qəhrəmanın ağıllı qərarları və interaktiv
+                sual-tapmacalar.
+              </p>
+            </div>
+            <div class="p-3 bg-surface-ivory rounded-xl space-y-1.5 text-xs text-text-ink font-semibold">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-amber-500">verified</span>
+                <span data-i18n="tier_explorer_f1">Ağıl və zəka sınaqları</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-amber-500">verified</span>
+                <span data-i18n="tier_explorer_f2">Dostluq və əməksevərlik dərsləri</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="event.stopPropagation(); window.snApp.selectAgeMode('explorer')"
+            class="mt-6 w-full py-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer">
+            <span data-i18n="tier_explorer_btn">7–10 Yaş Nağılını Oxu</span>
+            <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+          </button>
+        </div>
+
+        <!-- Tier 3: Qəhrəmanlar (11+ yaş) - Ruby Red Theme -->
+        <div onclick="window.snApp.selectAgeMode('hero')"
+          class="sn-age-btn p-6 rounded-3xl bg-surface-cream border border-rose-500/30 hover:border-rose-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer group hover:-translate-y-1">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span
+                class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/40 flex items-center justify-center text-rose-600 shadow-sm border border-rose-200/60 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">shield</span>
+              </span>
+              class="text-xs font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wider bg-rose-50
+              dark:bg-rose-950/50 px-3 py-1 rounded-full border border-rose-200/60">
+              11+ YAŞ
+              </span>
+            </div>
+            <div>
+              <h3
+                class="font-headline text-2xl font-bold text-text-ink group-hover:text-rose-600 transition-colors flex items-center gap-1.5">
+                <span data-i18n="tier_hero_name">Qəhrəmanlar</span>
+                <span class="text-sm">🦅</span>
+              </h3>
+              <div class="w-10 h-0.5 bg-rose-500/50 my-2"></div>
+              <p data-i18n="tier_hero_desc" class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Qədim dastanlar, mifik əjdahalar, dərin mənəvi dərslər və fəlsəfi dünya klassikləri.
+              </p>
+            </div>
+            <div class="p-3 bg-surface-ivory/80 rounded-xl space-y-1.5 text-xs text-on-surface-variant font-medium">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-rose-600">check_circle</span>
+                <span data-i18n="tier_hero_f1">Dastan və əfsanə qatları</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-rose-600">check_circle</span>
+                <span data-i18n="tier_hero_f2">Böyük xarakter və cəsarət təhlilləri</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="event.stopPropagation(); window.snApp.selectAgeMode('hero')"
+            class="mt-6 w-full py-3 bg-white dark:bg-surface-dark-secondary text-rose-700 dark:text-rose-400 font-bold rounded-xl text-xs sm:text-sm border border-rose-200/70 shadow-xs group-hover:bg-rose-600 group-hover:text-white transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer">
+            <span data-i18n="tier_hero_btn">11+ Yaş Nağılını Oxu</span>
+            <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+          </button>
+        </div>
+
+      </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 03 & 04: STORY CATALOG & CATEGORY FILTER ==================== -->
+    <section id="kataloq"
+      class="w-full px-4 sm:px-6 lg:px-12 py-12 lg:py-16 bg-surface-ivory border-t border-border-parchment/60">
+      <div class="max-w-7xl mx-auto space-y-8">
+
+        <!-- Header & Category Filter Container (Vertically centered: align-items: center) -->
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
+          <div class="space-y-1 shrink-0">
+            <h2 data-i18n="catalog_title"
+              class="font-headline text-3xl sm:text-4xl font-bold text-text-ink leading-tight">
+              Nağıllar və Hekayələr
+            </h2>
+            <p data-i18n="catalog_subtitle" class="text-sm text-on-surface-variant leading-relaxed">
+              İstədiyiniz kateqoriyanı seçərək nağılları<br />süzgəcdən keçirin və oxumağa başlayın.
+            </p>
+          </div>
+
+          <!-- Category Filter Chips (Single horizontal line, vertically centered) -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 flex-nowrap shrink-0">
+            <button onclick="window.snApp.filterCategory('all', this)"
+              class="sn-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-gradient-to-r from-orange-500 to-rose-600 text-white shadow-sm border-transparent whitespace-nowrap shrink-0 cursor-pointer"
+              data-cat="all" data-i18n="all_stories">Bütün Nağıllar</button>
+            <button onclick="window.snApp.filterCategory('az', this)"
+              class="sn-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-surface-dark-secondary hover:bg-orange-50 text-on-surface-variant hover:text-orange-700 border border-border-parchment/70 whitespace-nowrap shrink-0 cursor-pointer"
+              data-cat="az" data-i18n="cat_az">Azərbaycan Nağılları</button>
+            <button onclick="window.snApp.filterCategory('world', this)"
+              class="sn-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-surface-dark-secondary hover:bg-orange-50 text-on-surface-variant hover:text-orange-700 border border-border-parchment/70 whitespace-nowrap shrink-0 cursor-pointer"
+              data-cat="world" data-i18n="cat_world">Dünya Nağılları</button>
+            <button onclick="window.snApp.filterCategory('nature', this)"
+              class="sn-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-surface-dark-secondary hover:bg-orange-50 text-on-surface-variant hover:text-orange-700 border border-border-parchment/70 whitespace-nowrap shrink-0 cursor-pointer"
+              data-cat="nature" data-i18n="cat_nature">Heyvan Hekayələri</button>
+            <button onclick="window.snApp.filterCategory('bedtime', this)"
+              class="sn-cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-surface-dark-secondary hover:bg-orange-50 text-on-surface-variant hover:text-orange-700 border border-border-parchment/70 whitespace-nowrap shrink-0 cursor-pointer"
+              data-cat="bedtime" data-i18n="cat_bedtime">Yuxu Nağılları</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid populated by nagillar-core.js -->
+        <div id="sn-catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 05: LAYLALAR & YUXU GUŞƏSİ (Ambient Bedtime Audio) ==================== -->
+    <section id="laylalar"
+      class="w-full px-4 sm:px-6 lg:px-12 py-12 lg:py-16 bg-surface relative overflow-hidden border-t border-border-parchment/60">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="bg-surface-cream p-6 sm:p-10 rounded-3xl border border-border-parchment shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-2 text-interactive-amber font-bold text-xs uppercase tracking-widest">
+              <span class="material-symbols-outlined text-[18px]">bedtime</span>
+              <span data-i18n="lullaby_tag">LAYLALAR VƏ GECƏ İŞIĞI</span>
+            </div>
+            <h3 data-i18n="lullaby_title"
+              class="font-headline text-2xl sm:text-3xl font-bold text-text-ink leading-tight">
+              Sehrli Layla və Yuxuya Hazırlıq Guşəsi
+            </h3>
+            <p data-i18n="lullaby_desc" class="text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              Balacaların rahat və dərin yuxuya getməsi üçün qədim beşik nəğmələri, yumşaq arfa və külək zənglərinin
+              harmonik melodiyası. Heç bir internet bağlantısı tələb etmir, bir toxunuşla canlı çalınır.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                class="sn-trigger-lullaby px-6 py-3 bg-interactive-amber hover:bg-primary text-white font-bold rounded-2xl shadow-md transition-all flex items-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[22px]">music_note</span>
+                <span data-i18n="lullaby_start_btn">Sehrli Laylanı Başlat</span>
+              </button>
+              <button onclick="window.snApp.openStory('ulduzlari-yandiran-peri')"
+                class="px-5 py-3 bg-surface hover:bg-surface-ivory text-text-ink font-semibold rounded-2xl border border-border-parchment shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[20px] text-interactive-amber">auto_stories</span>
+                <span data-i18n="lullaby_read_btn">Yuxu Nağılını Oxu</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 flex items-center justify-center">
+            <div
+              class="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-interactive-amber/30 to-primary/20 border-4 border-white/80 shadow-2xl flex items-center justify-center magic-float">
+              <div
+                class="w-36 h-36 rounded-full bg-surface-ivory flex flex-col items-center justify-center text-center p-4 shadow-inner">
+                <span class="material-symbols-outlined text-4xl text-interactive-amber animate-spin"
+                  style="animation-duration: 12s;">nightlight</span>
+                <span data-i18n="lullaby_card_tag" class="font-headline font-bold text-xs text-text-ink mt-1">Şirin
+                  Yuxular</span>
+                <span data-i18n="lullaby_card_title" class="text-[10px] text-on-surface-variant">Sehrli Layla</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION: QƏHRƏMAN YEMƏKLƏRİ (Hero Dishes & Healthy Recipes) ==================== -->
+    <section id="qehreman-yemekleri"
+      class="w-full px-4 sm:px-6 lg:px-12 py-12 lg:py-16 bg-surface-cream/50 border-t border-border-parchment/60 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto space-y-10">
+
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-interactive-amber font-bold text-xs uppercase tracking-widest">
+              <span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+              <span data-i18n="hero_meals_subtitle">UŞAQ SAĞLAMLIĞI VƏ SEHRLİ MƏTBƏX</span>
+            </div>
+            <h2 class="font-headline text-3xl sm:text-4xl font-bold text-text-ink flex items-center gap-2">
+              <span data-i18n="hero_meals_title">Qəhrəman Yeməkləri</span>
+              <span class="text-2xl">🍲✨</span>
+            </h2>
+            <p class="text-sm sm:text-base text-on-surface-variant max-w-2xl leading-relaxed"
+              data-i18n="hero_meals_desc">
+              Nağıl qəhrəmanlarımız kimi güclü, cəsur və ağıllı böyümək üçün sehrli, dadlı və vitaminlə zəngin uşaq
+              yeməkləri və reseptləri!
+            </p>
+          </div>
+
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-surface-ivory rounded-2xl border border-border-parchment text-xs font-semibold text-primary shadow-sm shrink-0">
+            <span class="material-symbols-outlined text-[18px] text-interactive-amber">verified</span>
+            <span data-i18n="hero_meals_badge">Uşaqlar Üçün 100% Təbii və Faydalı</span>
+          </div>
+        </div>
+
+        <!-- 4 Recipe Cards (Yellow, Red, Green, Orange) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1: Cirtdan - Yellow / Gold Theme -->
+          <div
+            class="story-card-hover bg-surface-ivory rounded-3xl p-5 border border-amber-300/60 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all group">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform">
+                  🍯
+                </span>
+                <span
+                  class="text-[11px] font-bold text-amber-800 dark:text-amber-300 bg-amber-100/70 dark:bg-amber-950/60 px-2.5 py-0.5 rounded-full border border-amber-300/60"
+                  data-i18n="recipe_cirtdan_hero">
+                  Cırtdan
+                </span>
+              </div>
+              <div>
+                <h3
+                  class="font-headline text-lg font-bold text-text-ink group-hover:text-amber-600 transition-colors leading-snug"
+                  data-i18n="recipe_cirtdan_name">
+                  Cırtdanın Təndir Çörəyi və Dağ Balı
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-2 leading-relaxed" data-i18n="recipe_cirtdan_desc">
+                  Kənd balı, kərə yağı, qoz ləpəsi və təndir lavaşı. Divlərlə zəka yarışında Cırtdanın səhər gücü!
+                </p>
+              </div>
+              <div
+                class="p-2.5 bg-amber-50/70 dark:bg-amber-950/30 rounded-xl space-y-1 text-[11px] border border-amber-200/50">
+                <div class="font-bold text-amber-700 dark:text-amber-400 flex items-center gap-1">
+                  <span data-i18n="recipe_bonus_tag">⚡ Qəhrəman Bonusu:</span>
+                  <span class="text-text-ink dark:text-text-ink-inverted font-semibold"
+                    data-i18n="recipe_cirtdan_bonus">Zəka +100 • Zirəklik +90</span>
+                </div>
+                <div class="text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">timer</span>
+                  <span data-i18n="recipe_cirtdan_time">Hazırlanma: 5 dəqiqə</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.snApp.openRecipeModal('cirtdan')"
+              class="mt-5 w-full py-2.5 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-bold rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span data-i18n="view_recipe">Sehrli Reseptə Bax</span>
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            </button>
+          </div>
+
+          <!-- Card 2: Melikmemmed - Red / Ruby Theme -->
+          <div
+            class="story-card-hover bg-surface-ivory rounded-3xl p-5 border border-rose-300/60 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all group">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform">
+                  🍎
+                </span>
+                <span
+                  class="text-[11px] font-bold text-rose-800 dark:text-rose-300 bg-rose-100/70 dark:bg-rose-950/60 px-2.5 py-0.5 rounded-full border border-rose-300/60"
+                  data-i18n="recipe_melik_hero">
+                  Məlikməmməd
+                </span>
+              </div>
+              <div>
+                <h3
+                  class="font-headline text-lg font-bold text-text-ink group-hover:text-rose-600 transition-colors leading-snug"
+                  data-i18n="recipe_melik_name">
+                  Məlikməmmədin Qızıl Alma Sıyığı
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-2 leading-relaxed" data-i18n="recipe_melik_desc">
+                  Şirin qızıl alma, ətirli darçın, bal və buxarda bişmiş yulaf. Qaranlıq dünyaya enən qəhrəmana tükənməz
+                  cəsarət!
+                </p>
+              </div>
+              <div
+                class="p-2.5 bg-rose-50/70 dark:bg-rose-950/30 rounded-xl space-y-1 text-[11px] border border-rose-200/50">
+                <div class="font-bold text-rose-700 dark:text-rose-400 flex items-center gap-1">
+                  <span data-i18n="recipe_bonus_tag">⚡ Qəhrəman Bonusu:</span>
+                  <span class="text-text-ink dark:text-text-ink-inverted font-semibold"
+                    data-i18n="recipe_melik_bonus">Cəsarət +100 • Güc +95</span>
+                </div>
+                <div class="text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">timer</span>
+                  <span data-i18n="recipe_melik_time">Hazırlanma: 10 dəqiqə</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.snApp.openRecipeModal('melikmemmed')"
+              class="mt-5 w-full py-2.5 bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-bold rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span data-i18n="view_recipe">Sehrli Reseptə Bax</span>
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            </button>
+          </div>
+
+          <!-- Card 3: Zumrud Qusu - Green / Emerald Theme -->
+          <div
+            class="story-card-hover bg-surface-ivory rounded-3xl p-5 border border-emerald-300/60 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all group">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform">
+                  🫐
+                </span>
+                <span
+                  class="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-100/70 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-300/60"
+                  data-i18n="recipe_zumrud_hero">
+                  Zümrüd Quşu
+                </span>
+              </div>
+              <div>
+                <h3
+                  class="font-headline text-lg font-bold text-text-ink group-hover:text-emerald-600 transition-colors leading-snug"
+                  data-i18n="recipe_zumrud_name">
+                  Zümrüd Quşunun Giləmeyvə Şirəsi
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-2 leading-relaxed" data-i18n="recipe_zumrud_desc">
+                  Təzə meşə böyürtkəni, dağ moruğu, banan və qatıq. Qanadlarını 7 qat göyə qaldıran canlı vitamin
+                  partlayışı!
+                </p>
+              </div>
+              <div
+                class="p-2.5 bg-emerald-50/70 dark:bg-emerald-950/30 rounded-xl space-y-1 text-[11px] border border-emerald-200/50">
+                <div class="font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
+                  <span data-i18n="recipe_bonus_tag">⚡ Qəhrəman Bonusu:</span>
+                  <span class="text-text-ink dark:text-text-ink-inverted font-semibold"
+                    data-i18n="recipe_zumrud_bonus">Göz İtiyi +90 • Uçuş +100</span>
+                </div>
+                <div class="text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">timer</span>
+                  <span data-i18n="recipe_zumrud_time">Hazırlanma: 3 dəqiqə</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.snApp.openRecipeModal('zumrud')"
+              class="mt-5 w-full py-2.5 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-700 hover:to-green-600 text-white font-bold rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span data-i18n="view_recipe">Sehrli Reseptə Bax</span>
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            </button>
+          </div>
+
+          <!-- Card 4: Gerda - Orange / Warmth Theme -->
+          <div
+            class="story-card-hover bg-surface-ivory rounded-3xl p-5 border border-orange-300/60 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all group">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span
+                  class="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform">
+                  🥛
+                </span>
+                <span
+                  class="text-[11px] font-bold text-orange-800 dark:text-orange-300 bg-orange-100/70 dark:bg-orange-950/60 px-2.5 py-0.5 rounded-full border border-orange-300/60"
+                  data-i18n="recipe_gerda_hero">
+                  Balaca Gerda
+                </span>
+              </div>
+              <div>
+                <h3
+                  class="font-headline text-lg font-bold text-text-ink group-hover:text-orange-600 transition-colors leading-snug"
+                  data-i18n="recipe_gerda_name">
+                  Gerdanın Qəlbi İsidən Südlü Şərbəti
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-2 leading-relaxed" data-i18n="recipe_gerda_desc">
+                  İsti kənd südü, kərə yağı, çiçək balı və darçın. Qarlı şimal şaxtasını əridən saf sevgi və
+                  mehribanlıq!
+                </p>
+              </div>
+              <div
+                class="p-2.5 bg-orange-50/70 dark:bg-orange-950/30 rounded-xl space-y-1 text-[11px] border border-orange-200/50">
+                <div class="font-bold text-orange-700 dark:text-orange-400 flex items-center gap-1">
+                  <span data-i18n="recipe_bonus_tag">⚡ Qəhrəman Bonusu:</span>
+                  <span class="text-text-ink dark:text-text-ink-inverted font-semibold"
+                    data-i18n="recipe_gerda_bonus">İsti Ürək +100 • Şaxta +95</span>
+                </div>
+                <div class="text-on-surface-variant flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">timer</span>
+                  <span data-i18n="recipe_gerda_time">Hazırlanma: 6 dəqiqə</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="window.snApp.openRecipeModal('gerda')"
+              class="mt-5 w-full py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span data-i18n="view_recipe">Sehrli Reseptə Bax</span>
+              <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 06: NAĞIL TAPMACALARI (Interactive Quiz) ==================== -->
+    <section id="tapmaca"
+      class="w-full px-4 sm:px-6 lg:px-12 py-14 lg:py-20 bg-surface-ivory border-t border-border-parchment/60 relative overflow-hidden">
+
+      <!-- Subtle Background Glow -->
+      <div
+        class="absolute left-1/2 -top-24 -translate-x-1/2 w-[600px] h-72 bg-gradient-to-b from-orange-400/10 via-amber-300/10 to-transparent blur-3xl pointer-events-none">
+      </div>
+
+      <div class="max-w-7xl mx-auto space-y-8 sm:space-y-10 relative z-10">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-xl mx-auto space-y-3">
+          <div
+            class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-100/70 dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 text-[11px] font-bold uppercase tracking-[0.2em] border border-orange-200/80 dark:border-orange-800/40 shadow-xs">
+            <span class="text-amber-500">✨</span>
+            <span data-i18n="quiz_section_tag">ZƏKA VƏ TAPMACALAR</span>
+          </div>
+          <h2 data-i18n="quiz_section_title"
+            class="font-headline text-3xl sm:text-4xl lg:text-[40px] font-bold text-text-ink dark:text-text-ink-inverted tracking-tight leading-tight">
+          Sehrli Nağıl Tapmacası
+          </h2>
+          <p data-i18n="quiz_section_desc"
+            class="text-sm sm:text-base text-on-surface-variant max-w-md mx-auto leading-relaxed">
+            Öyrəndiyin nağılları nə dərəcədə yaxşı xatırlayırsan? Düzgün cavabı taparaq balaca xəzinə xalları qazan!
+          </p>
+        </div>
+
+        <!-- Main Quiz Card -->
+        <div id="sn-main-quiz-card"
+          class="max-w-2xl mx-auto bg-white dark:bg-surface-dark-secondary p-7 sm:p-10 rounded-[32px] border border-border-parchment/80 dark:border-white/10 shadow-xl shadow-orange-950/5 relative overflow-hidden space-y-6 sm:space-y-7 transition-all duration-300">
+
+          <!-- Top Card Meta: Badge & Points & Reset Button -->
+          <div class="flex items-center justify-between pb-4 border-b border-border-parchment/60 dark:border-white/10">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-orange-50 dark:bg-orange-950/50 border border-orange-200/70 dark:border-orange-800/40">
+              <span class="material-symbols-outlined text-[18px] text-amber-500">help</span>
+              <span id="sn-main-quiz-badge"
+                class="text-xs font-bold text-orange-800 dark:text-orange-300 uppercase tracking-wider">Tapmaca №
+                01</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div id="sn-main-quiz-score-badge"
+                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-500/15 via-yellow-500/15 to-orange-500/15 border border-amber-300/80 dark:border-amber-600/40 text-amber-700 dark:text-amber-300 text-xs font-bold shadow-xs transition-all duration-300">
+                <span class="text-sm">🪙</span>
+                <span id="sn-main-quiz-score-val">+10 Xal</span>
+              </div>
+              <button onclick="window.snApp.resetMainQuiz(true)" title="Xalları sıfırla və yenidən başla"
+                aria-label="Sıfırla"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-cream/90 dark:bg-surface-dark-secondary hover:bg-orange-500 hover:text-white dark:hover:bg-orange-600 border border-border-parchment/80 dark:border-white/10 hover:border-transparent text-on-surface-variant text-xs font-semibold shadow-2xs hover:shadow-md hover:shadow-orange-500/20 transition-all duration-200 cursor-pointer group active:scale-95">
+                <span class="text-xs group-hover:rotate-180 transition-transform duration-500 select-none">🔄</span>
+                <span data-i18n="quiz_reset_btn" class="font-medium">Sıfırla</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Question Text -->
+          <div class="py-1 sm:py-2 px-2 sm:px-4 text-center">
+            <p id="sn-main-quiz-question"
+              class="font-headline text-lg sm:text-2xl font-bold text-text-ink dark:text-text-ink-inverted leading-relaxed sm:leading-loose max-w-xl mx-auto min-h-[3.5rem] flex items-center justify-center transition-all duration-300">
+              "Balacayam, boyum bir qarış, amma ağlım dağlar qədərdir. Divi xəlbirdə su daşımağa göndərən qəhrəman
+              kimdir?"
+            </p>
+          </div>
+
+          <!-- Answer Options Grid (Symmetrical Standard Buttons with smooth float and shadow) -->
+          <div id="sn-main-quiz-options"
+            class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1 transition-all duration-300">
+            <!-- Rendered and updated dynamically by window.snApp.renderMainQuiz() -->
+          </div>
+
+          <!-- Bottom Dynamic Hint with Soft Glowing Illumination -->
+          <div id="sn-main-quiz-hint-box"
+            class="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/10 border border-amber-300/60 dark:border-amber-600/30 text-center text-xs sm:text-[13px] text-on-surface-variant flex items-center justify-center gap-2 shadow-xs transition-all duration-300 hover:shadow-md hover:shadow-amber-500/10">
+            <span
+              class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 text-xs shadow-xs animate-bounce"
+              style="animation-duration: 2.5s;">💡</span>
+            <span id="sn-main-quiz-hint-text" class="font-medium text-text-ink dark:text-text-ink-inverted">
+              <strong class="text-orange-700 dark:text-orange-400">İpucu:</strong> Bu qəhrəman ağlı və zirəkliyi ilə
+              divi aldadıb yoldaşlarını xilas etmişdi.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full bg-surface-cream border-t border-border-parchment/80 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-border-parchment/60">
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-rose-500 text-white flex items-center justify-center shadow">
+              <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+            </div>
+            <span class="font-headline font-bold text-lg text-text-ink">SEHRLİ NAĞILLAR</span>
+          </div>
+          <p data-i18n="footer_brand_desc" class="text-xs text-on-surface-variant leading-relaxed">
+            Klassik və müasir uşaq ədəbiyyatı, səsli nağıllar və ailəvi oxu mədəniyyətini təşviq edən xüsusi təhsil
+            guşəsi.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-headline font-bold text-sm text-text-ink" data-i18n="footer_sections_title">Bölmələr</h4>
+          <ul class="space-y-1.5 text-xs text-on-surface-variant">
+            <li><a href="#kataloq" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('kataloq', 'az')" data-i18n="nav_azerbaijani">Azərbaycan</a></li>
+            <li><a href="#kataloq" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('kataloq', 'world')" data-i18n="nav_world">Dünya</a></li>
+            <li><a href="#qehreman-yemekleri" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('qehreman-yemekleri')" data-i18n="nav_hero_meals">Yeməklər</a></li>
+            <li><a href="#kataloq" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('kataloq', 'nature')" data-i18n="nav_nature">Heyvan</a></li>
+            <li><a href="#laylalar" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('laylalar', 'bedtime')" data-i18n="nav_lullabies">Laylalar</a></li>
+            <li><a href="#tapmaca" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToSection('tapmaca')" data-i18n="nav_quiz">Tapmacalar</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-headline font-bold text-sm text-text-ink" data-i18n="footer_pedagogical_title">Pedaqoji İrs &
+            Klassika</h4>
+          <ul class="space-y-1.5 text-xs text-on-surface-variant">
+            <li><a href="#pedaqoji" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToAgeTier('toddler')" data-i18n="age_toddler">Balacalar (3–6 yaş)</a></li>
+            <li><a href="#pedaqoji" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToAgeTier('explorer')" data-i18n="age_explorer">Kəşfiyyatçılar (7–10 yaş)</a>
+            </li>
+            <li><a href="#pedaqoji" class="hover:text-orange-600 transition-colors cursor-pointer"
+                onclick="window.snApp.goToAgeTier('hero')" data-i18n="age_hero">Qəhrəmanlar (11+ yaş)</a></li>
+            <li><a href="javascript:void(0)"
+                class="hover:text-orange-600 transition-colors cursor-pointer text-orange-600 font-bold flex items-center gap-1"
+                onclick="window.snApp.openStory('qar-kralicasi')"><span data-i18n="nav_andersen">❄️ Qar Kraliçası
+                  (Andersen)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-headline font-bold text-sm text-text-ink" data-i18n="footer_contact_title">Əlaqə & Maarif</h4>
+          <p data-i18n="footer_contact_desc" class="text-xs text-on-surface-variant leading-relaxed">
+            Sehrli uşaq nağılları fondu və məktəbəqədər nağıl laboratoriyası.
+          </p>
+          <div class="text-xs font-semibold text-orange-700 dark:text-orange-400">sehrli@nagillar.az</div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+        <p data-i18n="footer_copyright">© 2025–2026 Sehrli Nağıllar. Bütün hüquqlar qorunur. Uşaq Ədəbiyyatı və Nağıl
+          Portalı.</p>
+        <div class="flex items-center gap-2">
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-bold border border-emerald-300/60 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span data-i18n="footer_safe_badge">Uşaqlar Üçün Təhlükəsiz Nağıl Portalı</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== QUIZ RESULT POP-UP MODAL ==================== -->
+  <div id="sn-quiz-result-modal"
+    class="fixed inset-0 z-[120] hidden modal-backdrop flex items-center justify-center p-4 overflow-y-auto bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+    <div
+      class="relative w-full max-w-md bg-[#FFFDF9] dark:bg-surface-dark-secondary rounded-[32px] p-6 sm:p-8 border border-orange-200/90 dark:border-white/10 shadow-2xl shadow-orange-950/25 text-center space-y-5 transform transition-all duration-300 scale-100 animate-fadeIn my-auto">
+
+      <!-- Modal Glow Effect in Background -->
+      <div
+        class="absolute -top-12 left-1/2 -translate-x-1/2 w-44 h-44 bg-gradient-to-br from-amber-400/20 via-orange-500/20 to-rose-500/20 rounded-full blur-2xl pointer-events-none">
+      </div>
+
+      <!-- Top Icon / Mascot -->
+      <div id="sn-quiz-modal-icon-wrap"
+        class="relative z-10 w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-amber-400 via-orange-500 to-rose-500 text-white flex items-center justify-center shadow-xl shadow-orange-500/30 text-4xl">
+        🌟
+      </div>
+
+      <!-- Title & Encouraging Message -->
+      <div class="relative z-10 space-y-2">
+        <h3 id="sn-quiz-modal-title"
+          class="font-headline text-2xl sm:text-[26px] font-bold text-text-ink dark:text-text-ink-inverted leading-snug">
+          Əla cəhd idi, balaca qəhrəman!
+        </h3>
+        <p id="sn-quiz-modal-desc"
+          class="text-xs sm:text-sm text-on-surface-variant leading-relaxed max-w-sm mx-auto px-1">
+          Biliklərini daha da artırmaq üçün yenidən sına!
+        </p>
+      </div>
+
+      <!-- Final Score Badge -->
+      <div class="relative z-10 py-1">
+        <div
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 border border-amber-300/80 dark:border-amber-600/40 text-amber-800 dark:text-amber-300 font-bold text-base sm:text-lg shadow-xs">
+          <span class="text-xl">🪙</span>
+          <span><span id="sn-quiz-modal-score-label" data-i18n="quiz_modal_score_label">Toplanan Xal:</span> <span
+              id="sn-quiz-modal-score-val" class="text-orange-600 dark:text-orange-400">0 Xal</span></span>
+        </div>
+      </div>
+
+      <!-- OK (Restart) Action Button -->
+      <div class="relative z-10 pt-1">
+        <button id="sn-quiz-modal-ok-btn" onclick="window.snApp.closeQuizResultModalAndRestart()"
+          class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-rose-500 hover:from-orange-600 hover:to-rose-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-orange-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-95 cursor-pointer flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[20px]">check_circle</span>
+          <span id="sn-quiz-modal-ok-text">OK</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
